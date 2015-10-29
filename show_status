@@ -22,6 +22,7 @@ class bcolors:
 	HEADER = '\033[95m'
 	OKBLUE = '\033[94m'
 	OKGREEN = '\033[92m'
+	OKCYAN = '\033[96m'
 	WARNING = '\033[93m'
 	FAIL = '\033[91m'
 	ENDC = '\033[0m'
@@ -100,10 +101,8 @@ if __name__ == "__main__":
 
     # See whats here
     for infile, dirnames, filenames in os.walk(options.dirname):
-
         #is there a .git file
         if os.path.exists( os.path.join(infile, ".git") ):
-
             #Yay, we found one!
             gitted = True
 
@@ -121,6 +120,9 @@ if __name__ == "__main__":
 
 		if branch == 'master':
 			branchColor = bcolors.OKGREEN
+
+		if branch == 'devel':
+			branchColor = bcolors.OKCYAN
 
 		branch = "[ " + branchColor + branch.ljust(15) + bcolors.ENDC + " ]"
 
@@ -167,4 +169,3 @@ if __name__ == "__main__":
         show_error("Error: None of those sub directories had a .git file.\n")
 
     sys.stdout.write("Done\n")
-
