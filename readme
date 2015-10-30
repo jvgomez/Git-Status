@@ -28,6 +28,10 @@ Options:
   -r REMOTE, --remote=REMOTE
                         Push to the master (remotename:branchname)
   -p PULL, --pull=PULL  Pull from the master (remotename:branchname)
+  -b BRANCH, --branch=BRANCH
+                        Checkout new branch with name BRANCH if there are changes
+                        Use -f to do this even if there are no changes
+  -f, --force           Force branch checkout
 
 
 -- Warranties/Guarantees --
