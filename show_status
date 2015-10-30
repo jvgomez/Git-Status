@@ -169,7 +169,10 @@ if __name__ == "__main__":
 
                 if options.branch:
                     if True == options.force or True == changesfound:
-                        result += " I wouldve branched"
+                        branchres = commands.getoutput(
+                            'cd {}; git checkout -b {}'.format(infile, options.branch)
+                        )
+                        result += " (Branching) \n" + branchres
 
 
                 # Write to screen
